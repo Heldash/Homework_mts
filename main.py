@@ -29,7 +29,7 @@ class Kino():
     def get_can_view(self):
         return self.can_view
     def __str__(self):
-        return f"title:{self.title}, year: {self.year}, country:{self.country}, director:{self.director}, can_view:{self.can_view}, raiting:{self.raiting}"
+        return f"Название: {self.title}, год: {self.year}, страна: {self.country}, режиссёр:{self.director}, Доступно на кипопоиске:{self.can_view}, рейтинг:{self.raiting}"
 
 
 import requests
