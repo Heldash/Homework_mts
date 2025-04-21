@@ -87,3 +87,4 @@ with open("result.csv",'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(itog)
+driver.close()
