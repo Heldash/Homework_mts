@@ -56,11 +56,20 @@ for cinema in kino_list:
     title = cinema.find("span",{"class":"styles_mainTitle__IFQyZ styles_activeMovieTittle__kJdJj"})
     # print(title.text)
     year = cinema.find("span",{"class":"desktop-list-main-info_secondaryText__M_aus"}).text
-    year = re.findall("\d{4}",year)[0]
+    try:
+        year = re.findall("\d{4}",year)[0]
+    except:
+        year = -1
     country_director = cinema.find("span",{"class":"desktop-list-main-info_truncatedText__IMQRP"}).text.split("•")
-    country = country_director[0].strip()
+    try:
+        country = country_director[0].strip()
+    except:
+        country = ""
     # print("country: ",country)
-    director = country_director[1].split("Режиссёр: ")[1]
+    try:
+        director = country_director[1].split("Режиссёр: ")[1]
+    except:
+        director = ""
     # print("Director: ",country_director[1].split("Режиссёр: ")[1])
     view_button = cinema.find("div",{"class":re.compile("styles_onlineButton*?")})
     # print(view_button)
